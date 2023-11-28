@@ -100,7 +100,7 @@ function ease(t) {
 
 /**
      * @typedef {Object} Rect
-     * @property {number} left - X coordinate of top-left corner.
+     * @property {number} left - X coordinate of top-left corner.scrollY
      * @property {number} top - Y coordinate of top-left corner.
      * @property {number} width - Width.
      * @property {number} height - Height.
@@ -125,11 +125,11 @@ class DocumentScroller {
          * @type {number}
          */
     get scrollLeft() {
-        return window.pageXOffset;
+        return window.scrollX;
     }
 
     set scrollLeft(val) {
-        window.scroll(val, window.pageYOffset);
+        window.scroll(val, window.scrollY);
     }
 
     /**
@@ -137,11 +137,11 @@ class DocumentScroller {
          * @type {number}
          */
     get scrollTop() {
-        return window.pageYOffset;
+        return window.scrollY;
     }
 
     set scrollTop(val) {
-        window.scroll(window.pageXOffset, val);
+        window.scroll(window.scrollX, val);
     }
 
     /**
